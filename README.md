@@ -5,7 +5,7 @@
 Bikeshare Coop
 
 ### Description
-This program defines the most significative stadistics
+This program defines the most significative stadistics without doing things else
 
 ### Files used
 Python file.
