@@ -6,7 +6,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 
 def get_filters():
-    
+
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     cities = set(['chicago', 'new york city', 'washington'])
@@ -92,7 +92,7 @@ def station_stats(df):
 
     # TO DO: display most commonly used start station
     CommonStartStation = df['Start Station'].mode()[0]
-    
+
     # TO DO: display most commonly used end station
     CommonEndStation = df['End Station'].mode()[0]
 
@@ -129,7 +129,7 @@ def user_stats(df):
     # TO DO: Display counts of user types
     Type_count = df['User Type'].value_counts()
     print(Type_count)
-    
+
 
     # TO DO: Display counts of gender
     try:
@@ -163,10 +163,10 @@ def display_raw_data(df):
             print(df.iloc[[count,count+1,count+2,count+3,count+4]])
             count=count+6
         else: break
-    
-    
-    
-    
+
+
+
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -176,16 +176,14 @@ def main():
             Waiter = input('\nPress "OK" to continues or "NO" to exit.\n').lower()
             if Waiter == 'no':
                 exit()
-        
+
         df = load_data(city, month, day)
 
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         display_raw_data(df)
-        restart = input('\nWould you like to restart? Enter yes or no.\n').lower()
-        if restart != 'yes':
-            break
+    
 
 
 
